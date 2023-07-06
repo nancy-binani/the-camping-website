@@ -6,7 +6,6 @@ var middleware = require("../middleware");
 var geocoder = require('geocoder');
 var { isLoggedIn, checkUserCampground, checkUserComment, isAdmin, isSafe } = middleware; // destructuring assignment
 
-// Define escapeRegex function for search feature
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };

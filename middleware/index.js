@@ -8,6 +8,7 @@ module.exports = {
       req.flash('error', 'You must be signed in to do that!');
       res.redirect('/login');
   },
+  
   checkUserCampground: function(req, res, next){
     Campground.findById(req.params.id, function(err, foundCampground){
       if(err || !foundCampground){
@@ -23,6 +24,7 @@ module.exports = {
       }
     });
   },
+
   checkUserComment: function(req, res, next){
     Comment.findById(req.params.commentId, function(err, foundComment){
        if(err || !foundComment){
@@ -38,6 +40,7 @@ module.exports = {
        }
     });
   },
+
   isAdmin: function(req, res, next) {
     if(req.user.isAdmin) {
       next();
